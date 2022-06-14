@@ -4,6 +4,7 @@ class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     SHOW_BASKET = (By.CSS_SELECTOR, ".btn-group > a.btn-default")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 class MainPageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
@@ -12,6 +13,11 @@ class MainPageLocators:
 class LoginPageLocators:
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
+    REGISTER_EMAIL = (By.CSS_SELECTOR, 'input[name=registration-email]')
+    REGISTER_PASSWORD = (By.CSS_SELECTOR, '#id_registration-password1')
+    REPEAT_REGISTER_PASSWORD = (By.CSS_SELECTOR, '#id_registration-password2')
+    REGISTER_BUTTON = (By.CSS_SELECTOR, 'button[name=registration_submit]')
+    SUCCESS_MESSAGE_REGISTRATION = (By.CSS_SELECTOR, ".alertinner wicon")
 
 
 class ProductPageLocators:
@@ -24,30 +30,3 @@ class ProductPageLocators:
 class BasketPageLocators:
     BASKET_TEXT = (By.CSS_SELECTOR, "div #content_inner > p")
     BASKET_PRODUCT_INFORMATION = (By.CSS_SELECTOR, ".basket-title >.row > h2")
-
-
-class SingletonFive:
-    count = 0
-    __obj = None
-
-    def __new__(cls, *args, **kwargs):
-        if cls.count <= 5:
-            cls.__obj = super().__new__(cls)
-            cls.count += 1
-        return cls.__obj
-
-    def __init__(self, name):
-        self.name = name
-
-class SingletonFive:
-    count = 0
-    __obj = None
-
-    def __new__(cls, *args, **kwargs):
-        if cls.count < 5:
-            cls.__obj = super().__new__(cls)
-        cls.count += 1
-        return cls.__obj
-
-    def __init__(self, name):
-        self.name = name
